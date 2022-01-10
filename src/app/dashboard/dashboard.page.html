@@ -1,0 +1,20 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="primary">
+    <ion-title> Dashboard </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <h1>Selection of Heroes</h1>
+  <div *ngFor="let hero of heroes">
+    <ion-card
+      @heroState
+      [routerLink]="['../hero-details', hero.id]"
+      color="secondary"
+    >
+      <ion-card-content> {{ hero.name }} </ion-card-content>
+    </ion-card>
+  </div>
+
+  <app-hero-search></app-hero-search>
+</ion-content>

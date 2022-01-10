@@ -1,0 +1,32 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="tabs/dashboard"></ion-back-button>
+    </ion-buttons>
+
+    <ion-title>{{heroName}} details</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <h1>Edit hero:</h1>
+  <form [formGroup]="editHeroForm" (ngSubmit)="onSubmit()">
+    <ion-grid
+      ><ion-col
+        ><ion-input
+          autocapitalize
+          inputmode="text"
+          formControlName="hero"
+          placeholder="Enter Input"
+        ></ion-input></ion-col
+      ><ion-col>
+        <ion-button
+          (click)="onSubmit()"
+          expand="full"
+          [disabled]="!editHeroForm.value.hero"
+          >Save</ion-button
+        ></ion-col
+      ></ion-grid
+    >
+  </form>
+</ion-content>

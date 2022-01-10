@@ -1,0 +1,45 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>Add hero</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form [formGroup]="addHeroForm" (ngSubmit)="onSubmit()">
+    <ion-item>
+      <ion-input
+        autocapitalize
+        inputmode="text"
+        formControlName="hero"
+        placeholder="Name of the new hero"
+      ></ion-input>
+    </ion-item>
+  </form>
+  <ion-grid expand="full"
+    ><ion-row
+      ><ion-col
+        ><ion-button
+          color="primary"
+          class="btn btn-success"
+          type="submit"
+          expand="full"
+          [disabled]="addHeroForm.invalid"
+          (click)="onSubmit()"
+        >
+          Submit
+        </ion-button></ion-col
+      ><ion-col
+        ><ion-button
+          color="primary"
+          class="btn btn-success"
+          type="submit"
+          expand="full"
+          color="danger"
+          (click)="goBack()"
+        >
+          Cancel
+        </ion-button></ion-col
+      ></ion-row
+    ></ion-grid
+  >
+</ion-content>

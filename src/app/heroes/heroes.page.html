@@ -1,0 +1,30 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>Heroes</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item-sliding>
+      <div @flyInOut *ngFor="let hero of heroes">
+        <ion-item [routerLink]="['../hero-details', hero.id]">
+          {{hero.name}}
+        </ion-item>
+
+        <ion-item-options>
+          <ion-item-option color="danger" (click)="deleteHero(hero)">
+            <ion-icon slot="end" name="archive"></ion-icon>
+            Delete
+          </ion-item-option>
+        </ion-item-options>
+      </div>
+    </ion-item-sliding>
+  </ion-list>
+
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button (click)="addHeroModal()">
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+</ion-content>

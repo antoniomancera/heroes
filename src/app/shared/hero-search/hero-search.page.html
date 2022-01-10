@@ -1,0 +1,14 @@
+<div id="search-component">
+  <h1>Hero Search</h1>
+  <ion-searchbar
+    showCancelButton="focus"
+    (ionInput)="search($event)"
+    color="light"
+  ></ion-searchbar>
+  <ion-spinner *ngIf="searching" color="primary"></ion-spinner>
+  <ion-list
+    ><div *ngFor="let hero of heroes | async" @heroState>
+      <ion-item>{{ hero.name }}</ion-item>
+    </div></ion-list
+  >
+</div>
